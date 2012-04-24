@@ -26,5 +26,3 @@ source "__DOTFILEPATH__/language"
 
 # import BBC proxies
 source "__DOTFILEPATH__/proxies"
-
-unset $dotfiles
