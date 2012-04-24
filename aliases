@@ -1,0 +1,10 @@
+alias r='source ~/.bashrc'
+alias e="$EDITOR $dotfiles && r"
+
+alias svn='rlwrap svn'
+
+# Sublime
+alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to pasteboard.'"
