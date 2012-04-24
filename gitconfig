@@ -30,3 +30,5 @@
 [alias]
 	spull = svn rebase
 	spush = svn dcommit
+
+	log = log --pretty=oneline -n 20 --graph
