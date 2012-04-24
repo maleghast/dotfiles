@@ -1,5 +1,5 @@
 # this will change depending on the bootstrap.sh exec
-export dotfiles='~/Development/dotfiles'
+export dotfiles="__DOTFILEPATH__"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -16,15 +16,15 @@ shopt -s cdspell
 
 
 # import exports
-source "$dotfiles/exports"
+source "__DOTFILEPATH__/exports"
 
 # import aliases
-source "$dotfiles/aliases"
+source "__DOTFILEPATH__/aliases"
 
 # import language settings
-source "$dotfiles/language"
+source "__DOTFILEPATH__/language"
 
 # import BBC proxies
-source "$dotfiles/proxies"
+source "__DOTFILEPATH__/proxies"
 
 unset $dotfiles
