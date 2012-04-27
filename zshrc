@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# this will change depending on the bootstrap.sh exec
+export dotfiles="__DOTFILEPATH__"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -9,13 +12,17 @@ ZSH_THEME="kolo"
 
 plugins=(git)
 
-source "__DOTFILES__/language"
+# import language
+source "__DOTFILEPATH__/language"
 
-source "__DOTFILES__/exports"
+# import exports
+source "__DOTFILEPATH__/exports"
 
-source "__DOTFILES__/aliases"
+# import aliases
+source "__DOTFILEPATH__/aliases"
 
-source "__DOTFILES__/proxies"
+# import proxies
+source "__DOTFILEPATH__/proxies"
 
 source $ZSH/oh-my-zsh.sh
 

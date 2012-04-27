@@ -48,7 +48,11 @@ ask_for_dotfiles_dir() {
 		fi
 	done
 
-	sed -i -e "s,__DOTFILEPATH__,$dotfiles_dir,g" ~/.bashrc
+  if [ "$choice" == 1 ]; then
+	  sed -i -e "s,__DOTFILEPATH__,$dotfiles_dir,g" ~/.zshrc
+  elif [ "$choice" == 2 ]; then
+	  sed -i -e "s,__DOTFILEPATH__,$dotfiles_dir,g" ~/.bashrc
+  fi
 }
 
 install_certs() {
