@@ -1,12 +1,32 @@
 #!/bin/bash
 
 source_dir=`pwd`
-dotfiles_dir=''
-certs_dir=''
+dotfiles_dir=""
+certs_dir=""
+choice="0"
+
+select_terminal() {
+  echo "Which shell do you want to use?"
+  echo "\t1 - zsh"
+  echo "\t2 - bash"
+  read choice
+
+  if [ "$choice" == "1" ]; then
+    echo "Installing zsh"
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  elif [ "$choice" == "2" ]; then
+    echo "Installing bash"
+  fi
+}
 
 copy_files() {
-	cp bashrc ~/.bashrc
-	cp inputrc ~/.inputrc
+  if [ "$choice" == "1" ]; then
+    cp zshrc ~/.zshrc
+  elif [ "$choice" == "2" ]; then
+    cp bashrc ~/.bashrc
+    cp inputrc ~/.inputrc
+  fi
+
 	cp gitconfig ~/.gitconfig
 }
 
@@ -54,6 +74,7 @@ install_certs() {
 	cp "$certs_dir/*" ~/.certs/
 }
 
+select_terminal()
 copy_files
 ask_for_dotfiles_dir
 install_certs
