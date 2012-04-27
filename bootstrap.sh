@@ -1,14 +1,15 @@
 #!/bin/bash
 
 source_dir=`pwd`
-dotfiles_dir=""
+dotfiles_dir=`dirname $0`
 certs_dir=""
 choice="0"
 
 select_terminal() {
   echo "Which shell do you want to use?"
-  echo "\t1 - zsh"
-  echo "\t2 - bash"
+  echo "  1 - zsh"
+  echo "  2 - bash"
+  echo ""
   read choice
 
   if [ "$choice" == "1" ]; then
@@ -21,33 +22,27 @@ select_terminal() {
 
 copy_files() {
   if [ "$choice" == "1" ]; then
-    cp zshrc ~/.zshrc
+    cp $dotfiles_dir/zshrc ~/.zshrc
   elif [ "$choice" == "2" ]; then
-    cp bashrc ~/.bashrc
-    cp inputrc ~/.inputrc
+    cp $dotfiles_dir/bashrc ~/.bashrc
+    cp $dotfiles_dir/inputrc ~/.inputrc
   fi
 
-	cp gitconfig ~/.gitconfig
+	cp $dotfiles_dir/gitconfig ~/.gitconfig
 }
 
-ask_for_dotfiles_dir() {
-	valid=false
+dotfiles_dir_finder() {
+  out=`cd $dotfiles_dir 2> lock; pwd`
+	contents=`cat $source_dir/lock`
 
-	while [[ $valid != true ]]; do
-		echo "Where is your dotfiles repository located?"
-		read dotfiles
+  if [ "$contents" == "" ]; then
+		dotfiles_dir=$out
 
-		out=`cd $dotfiles 2> lock; pwd`
-		contents=`cat $source_dir/lock`
+		rm "$source_dir/lock"
+	fi
+}
 
-		if [ "$contents" == "" ]; then
-			dotfiles_dir=$out
-
-			rm "$source_dir/lock"
-			valid=true
-		fi
-	done
-
+replace_tokens() {
   if [ "$choice" == 1 ]; then
 	  sed -i -e "s,__DOTFILEPATH__,$dotfiles_dir,g" ~/.zshrc
   elif [ "$choice" == 2 ]; then
@@ -56,7 +51,7 @@ ask_for_dotfiles_dir() {
 }
 
 install_certs() {
-	mkdir "~/.certs"
+	mkdir ~/.certs
 
 	valid=false
 
@@ -78,7 +73,8 @@ install_certs() {
 	cp "$certs_dir/*" ~/.certs/
 }
 
-select_terminal()
+select_terminal
+dotfiles_dir_finder
 copy_files
-ask_for_dotfiles_dir
+replace_tokens
 install_certs

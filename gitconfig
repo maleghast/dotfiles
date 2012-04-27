@@ -31,4 +31,5 @@
 	spull = svn rebase
 	spush = svn dcommit
 
+  status = status --short --branch
 	log = log --pretty=oneline -n 20 --graph
