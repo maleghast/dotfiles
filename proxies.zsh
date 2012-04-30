@@ -1,5 +1,3 @@
-echo $NETWORK_LOCATION
-
 if [ $NETWORK_LOCATION = 'BBC On Network'  ]; then
         export http_proxy='http://www-cache.reith.bbc.co.uk:80'
         export https_proxy='http://www-cache.reith.bbc.co.uk:80'
