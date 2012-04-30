@@ -1,4 +1,6 @@
-if [ "$NETWORK_LOCATION" == "BBC On Network" ]; then
+echo $NETWORK_LOCATION
+
+if [ $NETWORK_LOCATION = 'BBC On Network'  ]; then
         export http_proxy='http://www-cache.reith.bbc.co.uk:80'
         export https_proxy='http://www-cache.reith.bbc.co.uk:80'
         export ftp_proxy='ftp-gw.reith.bbc.co.uk:21'

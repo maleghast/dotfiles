@@ -25,4 +25,4 @@ source "__DOTFILEPATH__/aliases"
 source "__DOTFILEPATH__/language"
 
 # import BBC proxies
-source "__DOTFILEPATH__/proxies"
+source "__DOTFILEPATH__/proxies.bash"

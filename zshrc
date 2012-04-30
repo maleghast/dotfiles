@@ -22,7 +22,7 @@ source "__DOTFILEPATH__/exports"
 source "__DOTFILEPATH__/aliases"
 
 # import proxies
-source "__DOTFILEPATH__/proxies"
+source "__DOTFILEPATH__/proxies.zsh"
 
 source $ZSH/oh-my-zsh.sh
 
