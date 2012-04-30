@@ -31,5 +31,9 @@
 	spull = svn rebase
 	spush = svn dcommit
 
-  status = status --short --branch
 	log = log --pretty=oneline -n 20 --graph
+	slog = svn log --color --oneline --show-commit
+	bbcconfig = !git config user.name \"Simon Thulbourn\" && git config user.email \"simon.thulbourn@bbc.co.uk\"
+[user]
+	name = Simon Thulbourn
+	email = simon.thulbourn@bbc.co.uk
