@@ -1,4 +1,4 @@
-# this will change depending on the bootstrap.sh exec
+# this will change depending on the bootstrap.sh exec --test (revert later)
 export dotfiles="__DOTFILEPATH__"
 
 # Case-insensitive globbing (used in pathname expansion)
