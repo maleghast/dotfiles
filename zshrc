@@ -8,7 +8,7 @@ export dotfiles="__DOTFILEPATH__"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kolo"
+ZSH_THEME="terminalparty"
 
 plugins=(git)
 
