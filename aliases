@@ -10,3 +10,4 @@ alias svn='rlwrap svn'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to pasteboard.'"
 
 alias tmux="TERM=screen-256color-bce tmux"
+alias vos="vagrant destroy && vagrant up"
