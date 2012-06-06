@@ -29,6 +29,9 @@ copy_files() {
   fi
 
 	cp $dotfiles_dir/gitconfig ~/.gitconfig
+
+  mkdir -p ~/.ssh
+  cp $dotfiles_dir/ssh_config ~/.ssh/config
 }
 
 dotfiles_dir_finder() {
