@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # this will change depending on the bootstrap.sh exec
-export dotfiles="__DOTFILEPATH__"
+export dotfiles="/Users/sth/Development/dotfiles"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -10,21 +10,24 @@ export dotfiles="__DOTFILEPATH__"
 # time that oh-my-zsh is loaded.
 ZSH_THEME="terminalparty"
 
-plugins=(git)
+plugins=(git osx)
 
 # import language
-source "__DOTFILEPATH__/language"
+source "/Users/sth/Development/dotfiles/language"
 
 # import exports
-source "__DOTFILEPATH__/exports"
+source "/Users/sth/Development/dotfiles/exports"
 
 # import aliases
-source "__DOTFILEPATH__/aliases"
+source "/Users/sth/Development/dotfiles/aliases"
 
 # import proxies
-source "__DOTFILEPATH__/proxies.zsh"
+source "/Users/sth/Development/dotfiles/proxies.zsh"
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/Users/sth/.rvm/gems/ruby-1.9.3-p194/bin:/Users/sth/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/sth/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/sth/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/sth/.rvm/bin
+
+export rvm_project_rvmrc=1
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
