@@ -31,7 +31,7 @@
 	spull = svn rebase
 	spush = svn dcommit
 
-  dropbox = "!f()  { git init --bare /Users/sth/Documents/Dropbox/Projects/$1.git }; f"
+	dropbox = !/Users/sth/Development/dotfiles/git/git-dropbox.rb
 
   #l = log --pretty=oneline -n 20 --graph
 	slog = svn log --color --oneline --show-commit
