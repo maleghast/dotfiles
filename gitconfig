@@ -31,6 +31,8 @@
 	spull = svn rebase
 	spush = svn dcommit
 
+  dropbox = "!f()  { git init --bare /Users/sth/Documents/Dropbox/Projects/$1.git }; f"
+
   #l = log --pretty=oneline -n 20 --graph
 	slog = svn log --color --oneline --show-commit
 	bbcconfig = !git config user.name \"Simon Thulbourn\" && git config user.email \"simon.thulbourn@bbc.co.uk\"
