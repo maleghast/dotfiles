@@ -64,6 +64,13 @@ class DotfilesInstaller
 
     system "curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh"
   end
+  
+  def terminal
+    location = File.expand_path "~"
+
+    FileUtils.ln_s "#{@base_path}/terminal/inputrc", "#{location}/.inputrc"
+    FileUtils.ln_s "#{@base_path}/terminal/language", "#{location}/.language"
+  end
 
   def git
     location = File.expand_path "~"
@@ -95,5 +102,6 @@ opts.each do |arg, val|
 end
 
 installer.zsh
+installer.terminal
 installer.brew
 installer.git
