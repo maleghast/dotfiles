@@ -6,20 +6,29 @@ require 'getoptlong'
 class DotfilesInstaller
   def initialize
     # TODO: Find base path
-    @base_path = "/Users/sth/Development/dotfiles"
+    @base_path = "/Users/sth/Development/df-clone"
+    @user = ENV['USER']
   end
 
   def brew
     system "/usr/bin/ruby -e \"$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)\""
 
-    ["ack", "connect", "rlwrap", "hg", "libyaml", "memcached", "rbfu", "ruby-build"].each do |package|
+    packages = [
+      "ack", 
+      "connect", 
+      "rlwrap", 
+      "hg", 
+      "libyaml", 
+      "memcached", 
+      "rbfu", 
+      "ruby-build", 
+      "samba", 
+      "https://raw.github.com/AndrewVos/homebrew-alt/master/duplicates/vim.rb"
+    ]
+
+    packages.each do |package|
       system "brew install #{package}"
     end
-  end
-
-  def vim
-    system "brew install https://raw.github.com/AndrewVos/homebrew-alt/master/duplicates/vim.rb"
-    system "mv /usr/bin/vim /usr/bin/vim72"
   end
 
   def certificates
@@ -75,6 +84,6 @@ opts.each do |arg, val|
   end
 end
 
-installer.brew
-installer.zsh
-installer.git
+# installer.brew
+# installer.zsh
+# installer.git
