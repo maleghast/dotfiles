@@ -58,10 +58,16 @@ class DotfilesInstaller
   end
 
   def zsh
+    location = File.expand_path "~"
 
+    FileUtils.ln_s "#{@base_path}/zsh/zshrc", "#{location}/.zshrc"
+
+    system "curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh"
   end
 
   def git
+    location = File.expand_path "~"
+
     FileUtils.ln_s "#{@base_path}/git/gitconfig", "#{location}/.gitconfig"
   end
 end
@@ -88,6 +94,6 @@ opts.each do |arg, val|
   end
 end
 
-# installer.brew
-# installer.zsh
-# installer.git
+installer.zsh
+installer.brew
+installer.git
