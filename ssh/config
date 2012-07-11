@@ -1,1 +1,1 @@
-ProxyCommand ~/Development/dotfiles/ssh_proxy %h %p
+ProxyCommand ~/.ssh/proxy %h %p

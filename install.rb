@@ -5,8 +5,7 @@ require 'getoptlong'
 
 class DotfilesInstaller
   def initialize
-    # TODO: Find base path
-    @base_path = "/Users/sth/Development/df-clone"
+    @base_path = File.expand_path File.dirname(__FILE__)
     @user = ENV['USER']
   end
 
@@ -19,9 +18,10 @@ class DotfilesInstaller
       "rlwrap", 
       "hg", 
       "libyaml", 
-      "memcached", 
-      "rbfu", 
-      "ruby-build", 
+      "memcached",
+      "rbenv",
+      "ruby-build",
+      "https://raw.github.com/hmans/rbfu/1a1690e7fab18d01c03abc9c4655e8a57388c8b1/homebrew/rbfu.rb",
       "samba", 
       "https://raw.github.com/AndrewVos/homebrew-alt/master/duplicates/vim.rb"
     ]
@@ -32,7 +32,7 @@ class DotfilesInstaller
   end
 
   def certificates
-    location = File.expand_path("~/.certs")
+    location = File.expand_path "~/.certs"
 
     FileUtils.mkdir_p location
 
@@ -44,13 +44,17 @@ class DotfilesInstaller
   end
 
   def ssh path
-    location = File.expand_path("~/.ssh")
+    location = File.expand_path "~/.ssh"
 
     FileUtils.mkdir_p location
 
     FileUtils.ln_s "#{@base_path}/ssh/config", "#{location}/config"
-    FileUtils.cp "#{path}/ssh/id_rsa", "#{location}/ssh/id_rsa"
-    FileUtils.cp "#{path}/ssh/id_rsa.pub", "#{location}/ssh/id_rsa.pub"
+    FileUtils.ln_s "#{@base_path}/ssh/proxy", "#{location}/proxy"
+    FileUtils.cp "#{path}/id_rsa", "#{location}/id_rsa"
+    FileUtils.cp "#{path}/id_rsa.pub", "#{location}/id_rsa.pub"
+
+    FileUtils.chmod 0600, "#{location}/id_rsa"
+    FileUtils.chmod 0600, "#{location}/id_rsa.pub"
   end
 
   def zsh
