@@ -94,6 +94,8 @@ opts.each do |arg, val|
       puts ""
       puts "\t--ssh\tInstalls SSH Certs"
       puts "\t--cert\tInstalls BBC Certs"
+
+      exit
     when "--ssh"
       installer.ssh val
     when "--cert"
