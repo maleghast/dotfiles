@@ -31,13 +31,13 @@ class DotfilesInstaller
     end
   end
 
-  def certificates
+  def certificates path
     location = File.expand_path "~/.certs"
 
     FileUtils.mkdir_p location
 
     ["dev.bbc.co.uk.p12", "dev.bbc.co.uk.pem", "ca.pem"].each do |cert|
-      if File.exists?("#{path}/#{cert}") == false
+      if File.exists?("#{path}/#{cert}")
         FileUtils.cp "#{path}/#{cert}", "#{location}/#{cert}"
       end
     end
