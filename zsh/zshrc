@@ -12,19 +12,28 @@ ZSH_THEME="terminalparty"
 
 plugins=(git osx)
 
-# import language
-source "/Users/sth/Development/dotfiles/language.zsh"
+source $ZSH/oh-my-zsh.sh
 
 # import exports
-source "/Users/sth/Development/dotfiles/exports.zsh"
+source "$dotfiles/zsh/exports.zsh"
 
 # import aliases
-source "/Users/sth/Development/dotfiles/aliases.zsh"
+source "$dotfiles/zsh/aliases.zsh"
 
 # import proxies
-source "/Users/sth/Development/dotfiles/proxies.zsh"
+source "$dotfiles/zsh/proxies.zsh"
 
-source $ZSH/oh-my-zsh.sh
+# Set Apple Terminal.app resume directory
+if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
+	function chpwd {
+		local SEARCH=' '
+		local REPLACE='%20'
+		local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+		printf '\e]7;%s\a' "$PWD_URL"
+	}
+
+	chpwd
+}
 
 # rbenv & rbfu
 eval "$(rbenv init -)"

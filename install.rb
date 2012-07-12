@@ -60,9 +60,19 @@ class DotfilesInstaller
   def zsh
     location = File.expand_path "~"
 
-    FileUtils.ln_s "#{@base_path}/zsh/zshrc", "#{location}/.zshrc"
-
     system "curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh"
+
+    FileUtils.rm "#{location}/.zshrc"
+    FileUtils.cp "#{@base_path}/zsh/zshrc", "#{location}/.zshrc"
+
+    file = File.open("#{location}/.zshrc", "rb")
+    contents = file.read
+
+    contents.gsub "__DOTFILES__", @base_path
+
+    File.open("#{location}/.zshrc", "w+") do |f|
+      f.write(contents)
+    end
   end
   
   def terminal
