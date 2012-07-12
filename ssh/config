@@ -1,0 +1,1 @@
+ProxyCommand ~/.ssh/proxy %h %p

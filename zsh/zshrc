@@ -1,0 +1,43 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# this will change depending on the bootstrap.sh exec
+export dotfiles="__DOTFILES__"
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="terminalparty"
+
+plugins=(git osx)
+
+source $ZSH/oh-my-zsh.sh
+
+# import exports
+source "$dotfiles/zsh/exports.zsh"
+
+# import aliases
+source "$dotfiles/zsh/aliases.zsh"
+
+# import proxies
+source "$dotfiles/zsh/proxies.zsh"
+
+# Set Apple Terminal.app resume directory
+if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
+	function chpwd {
+		local SEARCH=' '
+		local REPLACE='%20'
+		local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+		printf '\e]7;%s\a' "$PWD_URL"
+	}
+
+	chpwd
+}
+
+# rbenv & rbfu
+eval "$(rbenv init -)"
+eval "$(rbfu --init)"
+
+# Customize to your needs...
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin

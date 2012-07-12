@@ -1,1 +1,0 @@
-ProxyCommand ~/Development/dotfiles/ssh_proxy %h %p

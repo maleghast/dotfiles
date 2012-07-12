@@ -1,4 +1,4 @@
-alias r='source ~/.zshrc'
+alias r="source ~/.zshrc"
 alias e="$EDITOR $dotfiles && r"
 
 alias svn='rlwrap svn'
@@ -9,7 +9,6 @@ alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to pasteboard.'"
 
-alias tmux="TERM=screen-256color-bce tmux"
 alias vos="vagrant destroy && vagrant up"
 alias adpasswd="smbpasswd -U thulbs01 -r bgb01dc1101.national.core.bbc.co.uk"
 
@@ -22,5 +21,5 @@ function md5() {
 }
 
 function fcl() {
-  curl --cacert /Users/sth/.certs/ca.greenhouse.pem --cert /Users/sth/.certs/greenhouse.pem $@
+  curl --cacert /Users/sth/.certs/ca.pem --cert /Users/sth/.certs/dev.bbc.co.uk.pem $@
 }
