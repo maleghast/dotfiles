@@ -37,7 +37,7 @@ if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
 
 # rbenv & rbfu
 eval "$(rbenv init -)"
-eval "$(rbfu --init)"
+eval "$(rbfu --init --auto)"
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
