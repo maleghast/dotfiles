@@ -2,7 +2,15 @@
 
 if [ "$NETWORK_LOCATION" = "BBC On Network" ]; then
 
-  /usr/local/bin/connect -S socks-gw.reith.bbc.co.uk:1085 $1 $2
+  if [[ "$1" == "localhost" || "$1" == "127.0.0.1" || "$1" =~ "sandbox.dev.bbc.co.uk" ]]; then
+
+    /usr/local/bin/connect $1 $2
+
+  else
+
+    /usr/local/bin/connect -S socks-gw.reith.bbc.co.uk:1085 $1 $2
+
+  fi
 
 else
 
