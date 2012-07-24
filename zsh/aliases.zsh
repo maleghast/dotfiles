@@ -23,3 +23,5 @@ function md5() {
 function fcl() {
   curl --cacert /Users/sth/.certs/ca.pem --cert /Users/sth/.certs/dev.bbc.co.uk.pem $@
 }
+
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
