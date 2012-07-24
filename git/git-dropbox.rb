@@ -6,12 +6,17 @@ class GitDropbox
   end
 
   def dropbox_path
-    dropbox = `defaults read com.getdropbox.dropbox NSNavLastRootDirectory`.chop
+    dropbox = `defaults read com.getdropbox.dropbox NSNavLastRootDirectory 2>/dev/null`.chop
     dropbox = File.expand_path "#{dropbox}/Dropbox/Projects"
 
     if !File.exists?(dropbox) then
-      puts "Dropbox path not found"
-      Process.exit 0
+        
+      if File.exists? File.expand_path("~/Dropbox/Projects")
+        dropbox = File.expand_path("~/Dropbox/Projects")
+      else
+        puts "Dropbox path not found"
+        Process.exit 0
+      end
     end
 
     @dropbox_path = dropbox
