@@ -13,13 +13,15 @@ class DotfilesInstaller
     system "/usr/bin/ruby -e \"$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)\""
 
     packages = [
+      "https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb",
       "ack", 
       "connect", 
       "rlwrap", 
       "hg", 
       "libyaml", 
       "memcached",
-      "rbenv",
+      "tmux",
+      "reattach-to-user-namespace",
       "ruby-build",
       "https://raw.github.com/hmans/rbfu/1a1690e7fab18d01c03abc9c4655e8a57388c8b1/homebrew/rbfu.rb",
       "samba", 
