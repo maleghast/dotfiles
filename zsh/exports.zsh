@@ -15,3 +15,5 @@ export EDITOR="vim"
 export NETWORK_LOCATION="$(/usr/sbin/scselect 2>&1 | egrep '^ \* ' | sed 's:.*(\(.*\)):\1:')"
 
 export TERM="xterm-256color"
+
+export GITHUB_USER="sthulbourn"
