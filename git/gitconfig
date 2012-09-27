@@ -31,7 +31,7 @@
 	spull = svn rebase
 	spush = svn dcommit
 
-	dropbox = !$dotfiles/git/git-dropbox.rb
+	dropbox = !/Users/sth/Development/dotfiles/git/git-dropbox.rb
 
 	slog = svn log --color --oneline --show-commit
 	bbcconfig = !git config user.name \"Simon Thulbourn\" && git config user.email \"simon.thulbourn@bbc.co.uk\"
