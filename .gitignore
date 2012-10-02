@@ -16,3 +16,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+mutt/cache/*
+mutt/certs/*

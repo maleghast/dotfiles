@@ -48,3 +48,5 @@
 	email = simon+github@thulbourn.com
 [github]
 	user = sthulbourn
+[branch "master"]
+	rebase = true

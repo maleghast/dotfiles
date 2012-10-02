@@ -1,0 +1,50 @@
+# colors
+source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+
+# locale
+set locale="en_GB"
+set charset="utf-8"
+
+# caches
+set message_cachedir="~/.mutt/cache/bodies"
+set header_cache="~/.mutt/cache/headers"
+set certificate_file="~/.mutt/certs"
+
+# imap folders
+set folder="imaps://exchange.forge.bbc.co.uk"
+set record="imaps://exchange.forge.bbc.co.uk/Sent Items"
+set postponed="imaps://exchange.forge.bbc.co.uk/Drafts"
+set mbox="imaps://exchange.forge.bbc.co.uk"
+set spoolfile="imaps://exchange.forge.bbc.co.uk/INBOX"
+
+# imap settings
+set mail_check=300
+set timeout=30
+set imap_idle=yes
+set imap_keepalive=60
+unset imap_passive
+
+# imap auth & user data
+set realname="Simon Thulbourn"
+set from="Simon Thulbourn <simon.thulbourn@bbc.co.uk>"
+set imap_user="thulbs01"
+set imap_pass="X13-98814-04"
+set imap_list_subscribed=yes
+set imap_check_subscribed=yes
+set ssl_force_tls=yes
+set ssl_client_cert="/Users/sth/.certs/dev.bbc.co.uk.pem"
+
+# smtp
+# set smtp_url="smtps://thulbs01@exchange.forge.bbc.co.uk"
+# set smtp_pass="X13-98814-04"
+set sendmail="/usr/local/bin/msmtp --file /Users/sth/.mutt/msmtprc"
+
+# ui
+set sort="threads"
+set sort_aux="last-date-received"
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set include
+set reply_to
+
+# vim: set ft=muttrc
