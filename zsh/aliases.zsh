@@ -3,6 +3,19 @@ alias e="$EDITOR $dotfiles && r"
 
 alias svn='rlwrap svn'
 
+function cat() {
+  if [ -z $@ ]; then
+    echo "Nothing specified"
+  elif [ -d $@ ]; then
+    echo "cat: $@: Is a directory"
+  else
+    pygmentize -O style=monokai -f console256 -g $@
+  fi
+}
+
+alias c='pygmentize -O style=monokai -f console256 -g'
+# alias cat='pygmentize -O style=monokai -f console256 -g'
+
 # Sublime
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 

@@ -33,6 +33,14 @@ class DotfilesInstaller
     end
   end
 
+  def python
+    packages = [ "Pygments" ]
+
+    packages.each do |package|
+      system "sudo easy_install #{package}"
+    end 
+  end
+
   def certificates path
     location = File.expand_path "~/.certs"
 
@@ -118,4 +126,5 @@ end
 installer.zsh
 installer.terminal
 installer.brew
+installer.python
 installer.git
