@@ -1,0 +1,14 @@
+ZSH="/Users/sth/.oh-my-zsh"
+ZSH_THEME="terminalparty"
+
+plugins=(git osx)
+
+source $ZSH/oh-my-zsh.sh
+
+dotfiles="/Users/sth/Development/dotfiles"
+
+if [[ -d $dotfiles/zsh/conf.d ]]; then
+  for conf in $dotfiles/zsh/conf.d/*.zsh; do
+    source $conf
+  done
+fi

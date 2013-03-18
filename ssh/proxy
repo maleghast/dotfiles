@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+zmodload zsh/regex
+
+function mac_network_location() {
+  echo "$(/usr/sbin/scselect 2>&1 | egrep "^ \* " | sed "s:.*(\(.*\)):\1:")"
+}
+
+network="`mac_network_location`"
+
+if [[ -n $SOCKS_PROXY || $network == *On* ]]; then
+  if [[ $1 -regex-match "^((10.(.*)|127.(.*)|192.168.(.*))|pal.sandbox.*|localhost)" ]]; then
+    /usr/bin/nc $1 $2
+  else
+    /usr/bin/nc -X 5 -x $SOCKS_PROXY $1 $2
+  fi
+fi
