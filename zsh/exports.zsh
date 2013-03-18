@@ -17,3 +17,5 @@ export NETWORK_LOCATION="$(/usr/sbin/scselect 2>&1 | egrep '^ \* ' | sed 's:.*(\
 export TERM="xterm-256color"
 
 export GITHUB_USER="sthulbourn"
+
+export PATH="/usr/local/share/npm/bin:$PATH"
