@@ -14,4 +14,6 @@ if [[ -n $SOCKS_PROXY || $network == *On* ]]; then
   else
     /usr/bin/nc -X 5 -x $SOCKS_PROXY $1 $2
   fi
+else
+  /usr/bin/nc $1 $2
 fi
