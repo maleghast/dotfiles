@@ -1,82 +1,14 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# this will change depending on the bootstrap.sh exec
-export dotfiles="__DOTFILES__"
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+ZSH="/Users/sth/.oh-my-zsh"
 ZSH_THEME="terminalparty"
 
 plugins=(git osx)
 
 source $ZSH/oh-my-zsh.sh
 
-# import exports
-source "$dotfiles/zsh/exports.zsh"
+dotfiles="/Users/sth/Development/dotfiles"
 
-# import aliases
-source "$dotfiles/zsh/aliases.zsh"
-
-# import proxies
-source "$dotfiles/zsh/proxies.zsh"
-
-# rbfu
-eval "$(rbfu --init --auto)"
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-
-if which tmux 2>&1 >/dev/null; then
-  test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
-
-# Set Apple Terminal.app resume directory
-
-# Tell the terminal about the working directory whenever it changes.
-# if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
-
-#   update_terminal_cwd() {
-#     # Identify the directory using a "file:" scheme URL, including
-#     # the host name to disambiguate local vs. remote paths.
-
-#     # Percent-encode the pathname.
-#     local URL_PATH=''
-#     {
-#       # Use LANG=C to process text byte-by-byte.
-#       local i ch hexch LANG=C
-#       for ((i = 1; i <= ${#PWD}; ++i)); do
-#         ch="$PWD[i]"
-#         if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
-#           URL_PATH+="$ch"
-#         else
-#           hexch=$(printf "%02X" "'$ch")
-#           URL_PATH+="%$hexch"
-#         fi
-#       done
-#     }
-
-#     local PWD_URL="file://$HOST$URL_PATH"
-#     echo "$PWD_URL"        # testing
-#     printf '\e]7;%s\a' "$PWD_URL"
-#   }
-
-#   # Register the function so it is called whenever the working
-#   # directory changes.
-#   autoload add-zsh-hook
-#   add-zsh-hook chpwd update_terminal_cwd
-
-#   # Tell the terminal about the initial directory.
-#   update_terminal_cwd
-# fi
-
-PWD=`pwd`
-
-if [ -f "$PWD/.ruby-version" ]; then
-  SOURCE="from $PWD/.ruby-version"
-  VERSION=`head -n 1 $PWD/.ruby-version`
-
-  rbfu-env "@$VERSION" > /dev/null 2>&1
+if [[ -d $dotfiles/zsh/conf.d ]]; then
+  for conf in $dotfiles/zsh/conf.d/*.zsh; do
+    source $conf
+  done
 fi

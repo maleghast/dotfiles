@@ -1,18 +1,19 @@
-#!/bin/bash
+#!/bin/zsh
 
-if [ "$NETWORK_LOCATION" = "BBC On Network" ]; then
-  if [[ "$1" == "localhost" || "$1" == "127.0.0.1" || "$1" =~ "sandbox.dev.bbc.co.uk" || "$1" =~ "10." || "$1" =~ "192.168." ]]; then
+zmodload zsh/regex
 
-    /usr/local/bin/connect $1 $2
+function mac_network_location() {
+  echo "$(/usr/sbin/scselect 2>&1 | egrep "^ \* " | sed "s:.*(\(.*\)):\1:")"
+}
 
+network="`mac_network_location`"
+
+if [[ -n $SOCKS_PROXY || $network == *On* ]]; then
+  if [[ $1 -regex-match "^((10.(.*)|127.(.*)|192.168.(.*))|pal.sandbox.*|localhost)" ]]; then
+    /usr/bin/nc $1 $2
   else
-
-    /usr/local/bin/connect -S socks-gw.reith.bbc.co.uk:1085 $1 $2
-
+    /usr/bin/nc -X 5 -x $SOCKS_PROXY $1 $2
   fi
-
 else
-
-  /usr/local/bin/connect $1 $2
-
+  /usr/bin/nc $1 $2
 fi
