@@ -108,7 +108,12 @@ set autoread
 " http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
 set clipboard+=unnamed
 
-let g:Powerline_symbols='fancy'
+" jump to last cursor
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
 
 " Declare bundles are handled via Vundle
 " filetype off " required!
@@ -178,3 +183,14 @@ Bundle 'tpope/vim-endwise'
 
 " powerline
 Bundle 'Lokaltog/vim-powerline'
+
+let g:Powerline_symbols='fancy'
+
+" gists
+Bundle 'mattn/webapi-vim'
+Bundle 'vim-scripts/Gist.vim'
+Bundle 'tpope/vim-fugitive'
+
+"Github settings
+let g:github_user = $GITHUB_USER
+let g:github_token = $GITHUB_TOKEN
