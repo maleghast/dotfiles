@@ -4,3 +4,5 @@ Host news
   HostName 54.228.234.240
   User root
   IdentityFile "/Users/sth/Dropbox/Certificates & Licenses/BBC Certificates/News.pem"
+  ServerAliveInterval 120
+  ServerAliveCountMax 3
