@@ -13,3 +13,6 @@ export PATH="/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 # Set language to British
 export LC_ALL="en_GB.UTF-8"
 export LANG="en_GB.UTF-8"
+
+export DEV_CA_PATH=/Users/sth/Dropbox/Certificates\ \&\ Licenses/BBC\ Certificates/ca.pem
+export DEV_CERT_PATH=/Users/sth/Dropbox/Certificates\ \&\ Licenses/BBC\ Certificates/dev.bbc.co.uk.pem
