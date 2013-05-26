@@ -152,6 +152,7 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'kchmck/vim-coffee-script'
 
 " tags
+Bundle 'xolox/vim-misc'
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-easytags'
 
