@@ -13,3 +13,5 @@ if [[ -d $dotfiles/zsh/conf.d ]]; then
     source $conf
   done
 fi
+
+export PATH="/opt/boxen/homebrew/share/npm/bin:/opt/chgems/bin:/opt/vagrant/bin:$PATH"
