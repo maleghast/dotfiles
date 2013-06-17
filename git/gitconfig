@@ -23,6 +23,7 @@
 
 [core]
   autocrlf = false
+  quotepath = false
 
 [alias]
   spull = svn rebase
@@ -31,7 +32,7 @@
 
   bbcconfig = !git config user.name \"Simon Thulbourn\" && git config user.email \"simon.thulbourn@bbc.co.uk\"
   st = status -sb
-
+  conflicts = "!git status --short | grep \"^UU\""
 [user]
   name = Simon Thulbourn
   email = simon+github@thulbourn.com
