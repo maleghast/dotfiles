@@ -18,7 +18,7 @@ bindkey "\e[5D" backward-word
 bindkey "\e\e[C" forward-word
 bindkey "\e\e[D" backward-word
 
-# set completion-ignore-case on
+set completion-ignore-case on
 
 # set mark-symlinked-directories on
 
@@ -28,3 +28,10 @@ bindkey "\e\e[D" backward-word
 # Control-k: menu-complete-backward
 
 # set completion-prefix-display-length 2
+
+
+bindkey -v
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
+
+
