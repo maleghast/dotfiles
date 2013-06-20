@@ -1,5 +1,6 @@
 # do not autoselect the first completion entry
 unsetopt menu_complete
+
 unsetopt flowcontrol
 setopt auto_menu
 
@@ -7,3 +8,23 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
+zmodload -i zsh/complist
+
+bindkey -M menuselect '^o' accept-and-infer-next-history
+zstyle ':completion:*:*:*:*:*' menu select
+
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+cdpath=(.)
+
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path /tmp/cache/
+
+## Completions
+autoload -Uz compinit
+compinit
+
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+setopt correctall
