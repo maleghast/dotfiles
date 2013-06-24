@@ -199,6 +199,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " File Formats
 autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd FileType yaml setl sw=2 sts=2 et
+
 
 " better splits
 set splitbelow
