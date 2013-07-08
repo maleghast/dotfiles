@@ -95,7 +95,8 @@ endif
 " autoload files that have changed outside of vim
 set autoread
 
-
+" command to use sudo when needed
+cmap w!! %!sudo tee > /dev/null %
 
 " use system clipboard
 " http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
@@ -220,3 +221,30 @@ Bundle 'vim-scripts/rename.vim'
 " tmux switcher
 " http://robots.thoughtbot.com/post/53022241323/seamlessly-navigate-vim-and-tmux-splits
 Bundle 'christoomey/vim-tmux-navigator'
+
+
+" Unite
+" Bundle 'Shougo/vimproc.vim'
+" Bundle 'Shougo/unite.vim'
+
+" " Always start insert mode
+" let g:unite_enable_start_insert = 1
+
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#filters#sorter_default#use(['sorter_rank'])
+" call unite#set_profile('files', 'smartcase', 1)
+
+" let g:unite_source_grep_command='ag'
+" let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
+" let g:unite_source_grep_recursive_opt=''
+
+" nnoremap <Leader>f :Unite grep:. -no-quit -no-start-insert<cr>
+" nnoremap <Leader>t :Unite file_rec/async<cr>
+" nnoremap <Leader>y :Unite -quick-match buffer<cr>
+
+" git gutter
+Bundle 'airblade/vim-gitgutter'
+let g:gitgutter_enabled = 1
+let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
+highlight clear SignColumn
