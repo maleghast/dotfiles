@@ -7,6 +7,13 @@ Host news
   ServerAliveInterval 120
   ServerAliveCountMax 3
 
+Host home
+  HostName 82.196.6.191
+  User root
+  IdentityFile "/Users/sth/.ssh/home.id_rsa"
+  ServerAliveInterval 120
+  ServerAliveCountMax 3
+
 Host gh
   HostName github.com
   User git
