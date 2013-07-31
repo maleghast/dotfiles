@@ -140,7 +140,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
 " set background=dark
 " :silent! :colorscheme solarized
 
-Bundle 'mnoble/tomorrow-night-vim'
+Bundle 'jlangston/tomorrow-night-vim'
 :silent! :colorscheme tomorrow-night-bright
 
 " markdown
@@ -203,6 +203,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " File Formats
 autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd Filetype markdown setlocal textwidth=80
 autocmd FileType yaml setl sw=2 sts=2 et
 
 
