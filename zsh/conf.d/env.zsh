@@ -17,6 +17,8 @@ export LANG="en_GB.UTF-8"
 export DEV_CA_PATH=/Users/sth/Dropbox/Certificates\ \&\ Licenses/BBC\ Certificates/ca.pem
 export DEV_CERT_PATH=/Users/sth/Dropbox/Certificates\ \&\ Licenses/BBC\ Certificates/dev.bbc.co.uk.pem
 
+export CC=gcc
+
 if [ -d "/Applications/VMware Fusion.app" ]; then
   export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 fi
