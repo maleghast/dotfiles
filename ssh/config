@@ -15,6 +15,7 @@ Host home
   ServerAliveCountMax 3
 
 Host gh
+Host github.com
   HostName github.com
   User git
   IdentityFile "/Users/sth/Dropbox/Certificates/SSH Keys/GitHub/id_rsa"
