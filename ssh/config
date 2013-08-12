@@ -3,18 +3,18 @@ ProxyCommand ~/.ssh/proxy %h %p
 Host news
   HostName 54.228.234.240
   User root
-  IdentityFile "/Users/sth/Dropbox/Certificates & Licenses/BBC Certificates/News - EC2 - bbcnewshq.com.pem"
+  IdentityFile "/Users/sth/Dropbox/Certificates/SSH Keys/BBC EC2/bbcnewshq.com.pem"
   ServerAliveInterval 120
   ServerAliveCountMax 3
 
 Host home
   HostName 82.196.6.191
   User root
-  IdentityFile "/Users/sth/.ssh/home.id_rsa"
+  IdentityFile "/Users/sth/Dropbox/Certificates/SSH Keys/Home/id_rsa"
   ServerAliveInterval 120
   ServerAliveCountMax 3
 
 Host gh
   HostName github.com
   User git
-  IdentityFile "/users/sth/.ssh/id_rsa"
+  IdentityFile "/Users/sth/Dropbox/Certificates/SSH Keys/GitHub/id_rsa"
