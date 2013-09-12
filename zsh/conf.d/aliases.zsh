@@ -1,5 +1,7 @@
 # Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to pasteboard.'"
+function pubkey() {
+  cat /Users/sth/Dropbox/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
+}
 
 function sha() {
   echo -n $@ | openssl sha
