@@ -6,7 +6,7 @@ export EDITOR="vim"
 
 export TERM="screen-256color"
 
-export GITHUB_USER="sthulbourn"
+export GITHUB_USER="sthulb"
 
 export PATH="/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 
