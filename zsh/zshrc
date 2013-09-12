@@ -1,5 +1,4 @@
-source /opt/boxen/env.sh
-
+fpath=(/opt/boxen/homebrew/share/zsh/site-functions $fpath)
 dotfiles="/Users/sth/Developer/dotfiles"
 
 if [[ -d $dotfiles/zsh/conf.d ]]; then
@@ -9,3 +8,5 @@ if [[ -d $dotfiles/zsh/conf.d ]]; then
 fi
 
 export PATH="/opt/boxen/homebrew/share/npm/bin:/opt/chgems/bin:/opt/vagrant/bin:$PATH"
+
+source /opt/boxen/env.sh

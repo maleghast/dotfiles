@@ -20,8 +20,10 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path /tmp/cache/
 
 ## Completions
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
+#
+autoload compinit; compinit
 
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
