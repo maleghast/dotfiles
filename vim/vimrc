@@ -52,6 +52,10 @@ set nowrap
 " scroll with more context
 set scrolloff=10
 
+" stop indentation on page
+" http://stackoverflow.com/a/16993224
+command Paste execute 'set noai | insert | set ai'
+
 " allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
 
@@ -181,6 +185,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " end stuff
 Bundle 'tpope/vim-endwise'
+
+" tabular
+Bundle 'godlygeek/tabular'
 
 " powerline
 Bundle 'Lokaltog/vim-powerline'
