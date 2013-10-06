@@ -190,9 +190,9 @@ Bundle 'tpope/vim-endwise'
 Bundle 'godlygeek/tabular'
 
 " powerline
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 
-let g:Powerline_symbols='fancy'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " gists
 Bundle 'mattn/webapi-vim'
