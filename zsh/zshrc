@@ -1,12 +1,10 @@
-fpath=(/opt/boxen/homebrew/share/zsh/site-functions $fpath)
-dotfiles="/Users/sth/Developer/dotfiles"
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+dotfiles="/Users/sth/.dotfiles"
 
-export PATH="/opt/boxen/homebrew/bin:/opt/boxen/homebrew/share/npm/bin:/opt/chgems/bin:/opt/vagrant/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/share/npm/bin:/opt/chgems/bin:$PATH"
 
 if [[ -d $dotfiles/zsh/conf.d ]]; then
   for conf in $dotfiles/zsh/conf.d/*.zsh; do
     source $conf
   done
 fi
-
-source /opt/boxen/env.sh
