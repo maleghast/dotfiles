@@ -164,7 +164,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-easytags'
 
-let g:tagbar_ctags_bin='/opt/boxen/homebrew/bin/ctags'
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 "Open Tagbar when pressing <leader>b and automatically close it after
 ""selecting something
