@@ -3,6 +3,12 @@ function pubkey() {
   cat /Users/sth/Dropbox/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
 }
 
+function keypair() {
+  mkdir $@
+  ssh-keygen -f ~/Dropbox/Certificates/SSH\ Keys/$@/id_rsa
+  cat ~/Dropbox/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
+}
+
 function sha() {
   echo -n $@ | openssl sha
 }
@@ -29,8 +35,8 @@ alias whois="whois -h whois-servers.net"
 alias flush="dscacheutil -flushcache"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
