@@ -294,3 +294,5 @@ highlight clear SignColumn
 
 Bundle 'AndrewRadev/gapply.vim'
 
+" Easydir
+Bundle 'dockyard/vim-easydir'
