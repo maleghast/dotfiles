@@ -45,8 +45,13 @@
 [branch "master"]
   rebase = true
 
+[branch "develop"]
+  rebase = true
+
 [diff]
   tool = vimdiff
 
 [difftool]
   prompt = false
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
