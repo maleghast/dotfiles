@@ -192,9 +192,13 @@ Bundle 'tpope/vim-endwise'
 Bundle 'godlygeek/tabular'
 
 " powerline
-Bundle 'Lokaltog/powerline'
+" Bundle 'Lokaltog/powerline'
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" airline
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
 
 " gists
 Bundle 'mattn/webapi-vim'
