@@ -21,6 +21,15 @@ function fcl() {
   curl --cacert $DEV_CA_PATH --cert $DEV_CERT_PATH $@
 }
 
+
+function pem-p12() {
+  openssl pkcs12 -export -in $1 -out $2 -passout pass:password
+}
+
+function p12-pem() {
+  openssl pkcs12 -export -in $1 -out $2 -clcerts
+}
+
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # IP addresses
