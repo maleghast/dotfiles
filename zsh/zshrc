@@ -1,6 +1,6 @@
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 dotfiles="/Users/sth/.dotfiles"
-
+stty -ixon
 export PATH="./.bin:/usr/local/bin:/usr/local/share/npm/bin:/opt/chgems/bin:$PATH"
 
 if [[ -d $dotfiles/zsh/conf.d ]]; then
