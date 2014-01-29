@@ -14,8 +14,8 @@ export PATH="/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 export LC_ALL="en_GB.UTF-8"
 export LANG="en_GB.UTF-8"
 
-export DEV_CA_PATH="/Users/sth/Dropbox/Certificates/BBC Developer/ca.pem"
-export DEV_CERT_PATH="/Users/sth/Dropbox/Certificates/BBC Developer/dev.bbc.co.uk.pem"
+export DEV_CA_PATH="/Users/sth/Documents/Certificates/BBC Developer/ca.pem"
+export DEV_CERT_PATH="/Users/sth/Documents/Certificates/BBC Developer/dev.bbc.co.uk.pem"
 
 export CC=gcc
 

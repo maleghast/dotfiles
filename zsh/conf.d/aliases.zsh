@@ -1,12 +1,12 @@
 # Pipe my public key to my clipboard.
 function pubkey() {
-  cat /Users/sth/Dropbox/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
+  cat /Users/sth/Documents/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
 }
 
 function keypair() {
   mkdir $@
-  ssh-keygen -f ~/Dropbox/Certificates/SSH\ Keys/$@/id_rsa
-  cat ~/Dropbox/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
+  ssh-keygen -f ~/Documents/Certificates/SSH\ Keys/$@/id_rsa
+  cat ~/Documents/SSH\ Keys/$@/id_rsa.pub | pbcopy
 }
 
 function sha() {
@@ -27,7 +27,7 @@ function pem-p12() {
 }
 
 function p12-pem() {
-  openssl pkcs12 -export -in $1 -out $2 -clcerts
+  openssl pkcs12 -in $1 -out $2 -clcerts -nodes
 }
 
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
