@@ -300,3 +300,6 @@ Bundle 'AndrewRadev/gapply.vim'
 
 " Easydir
 Bundle 'dockyard/vim-easydir'
+
+" dockerfile
+Bundle 'ekalinin/Dockerfile.vim'
