@@ -4,3 +4,7 @@ vim/vim/bundle/*
 
 ssh/config
 ssh/known_hosts
+
+vim/vim/ftdetect/
+vim/vim/snippets/
+vim/vim/syntax/
