@@ -303,3 +303,14 @@ Bundle 'dockyard/vim-easydir'
 
 " dockerfile
 Bundle 'ekalinin/Dockerfile.vim'
+
+Bundle 'jnwhiteh/vim-golang'
+" not sure why vim-golang doesn't include this.
+autocmd BufNewFile,BufReadPost *.go set filetype=go
+
+Bundle 'dgryski/vim-godef'
+autocmd BufWritePre *.go Fmt
+
+Bundle 'Blackrush/vim-gocode'
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt-=preview
