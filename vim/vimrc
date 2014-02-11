@@ -309,7 +309,7 @@ Bundle 'jnwhiteh/vim-golang'
 autocmd BufNewFile,BufReadPost *.go set filetype=go
 
 Bundle 'dgryski/vim-godef'
-autocmd BufWritePre *.go Fmt
+autocmd BufWritePre *.go silent Fmt
 
 Bundle 'Blackrush/vim-gocode'
 let g:SuperTabDefaultCompletionType = "context"
