@@ -57,3 +57,14 @@ alias hosts="sudo $EDITOR /etc/hosts"
 function mount() {
   hdiutil attach -mountpoint /Users/sth/Documents/Certificates ~/Google\ Drive/Certificates.dmg > /dev/null
 }
+
+function rr() {
+  if [ $# -ne 1 ]; then
+    echo "Please provide a network interface"
+    return 0
+  fi
+
+  GATEWAY_ADDR=`netstat -nr | grep default | grep $1 | awk '{print $2}'`
+
+  sudo route -n add 10.0.0.0/8 $GATEWAY_ADDR
+}
