@@ -12,6 +12,8 @@ install ruby-install
 install chruby
 install tmux
 install autossh
+install chromedriver
+install phantomjs
 
 tap homebrew/versions
 
