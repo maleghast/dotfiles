@@ -1,7 +1,7 @@
 update
 
 install the_silver_searcher
-install vim
+install vim --override-system-vi
 install ctags
 install zsh
 install docker
@@ -24,7 +24,6 @@ install brew-cask
 
 brew tap caskroom/versions
 
-cask install google-chrome --appdir=/Applications --force
 cask install google-drive --appdir=/Applications --force
 cask install iterm2-beta --appdir=/Applications --force
 cask install vmware-fusion --appdir=/Applications --force
