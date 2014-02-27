@@ -24,3 +24,5 @@ if [ -d "/Applications/VMware Fusion.app" ]; then
 fi
 
 export HOMEBREW_CASK_OPTS='--appdir=/Applications --force'
+
+export DOCKER_HOST='localhost:4243'
