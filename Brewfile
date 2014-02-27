@@ -19,10 +19,16 @@ tap homebrew/versions
 
 install gcc49
 
-install brew-cask
 tap phinze/cask
+install brew-cask
 
-cask install google-chrome
-cask install google-drive
-cask install iterm2
-cask install vmware-fusion
+brew tap caskroom/versions
+
+cask install google-chrome --appdir=/Applications --force
+cask install google-drive --appdir=/Applications --force
+cask install iterm2-beta --appdir=/Applications --force
+cask install vmware-fusion --appdir=/Applications --force
+cask install vagrant --appdir=/Applications --force
+cask install virtualbox --appdir=/Applications --force
+cask install transmission --appdir=/Applications --force
+cask install vlc --appdir=/Applications --force
