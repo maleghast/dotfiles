@@ -9,4 +9,6 @@ if [[ -d $dotfiles/zsh/conf.d ]]; then
   done
 fi
 
-mount
+if [ ! -d ~/Documents/Certificates ]; then
+  mount
+fi
