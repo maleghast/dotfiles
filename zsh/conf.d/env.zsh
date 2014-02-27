@@ -23,3 +23,4 @@ if [ -d "/Applications/VMware Fusion.app" ]; then
   export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 fi
 
+export HOMEBREW_CASK_OPTS='--appdir=/Applications --force'
