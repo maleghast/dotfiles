@@ -1,12 +1,12 @@
 # Pipe my public key to my clipboard.
 function pubkey() {
-  cat /Users/sth/Documents/Certificates/SSH\ Keys/$@/id_rsa.pub | pbcopy
+  cat "$HOME/Documents/Certificates/SSH Keys/$@/id_rsa.pub" | pbcopy
 }
 
 function keypair() {
-  mkdir $@
-  ssh-keygen -f ~/Documents/Certificates/SSH\ Keys/$@/id_rsa
-  cat ~/Documents/SSH\ Keys/$@/id_rsa.pub | pbcopy
+  mkdir -p "$HOME/Documents/Certificates/SSH Keys/$@"
+  ssh-keygen -f "$HOME/Documents/Certificates/SSH Keys/$@/id_rsa"
+  cat "$HOME/Documents/Certificates/SSH Keys/$@/id_rsa.pub" | pbcopy
 }
 
 function sha() {
@@ -67,4 +67,14 @@ function rr() {
   GATEWAY_ADDR=`netstat -nr | grep default | grep $1 | awk '{print $2}'`
 
   sudo route -n add 10.0.0.0/8 $GATEWAY_ADDR
+}
+
+function gif() {
+  echo "Converting to MP4"
+
+  name=`basename $@ .gif`
+  mkdir -p /tmp/__gif
+  convert "$@" /tmp/__gif/gif%05d.jpg > /dev/null 2>&1
+
+  ffmpeg -r 10 -i /tmp/__gif/gif%05d.jpg $name.mp4 > /dev/null 2>&1
 }
