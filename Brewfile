@@ -22,7 +22,7 @@ install gcc49
 tap phinze/cask
 install brew-cask
 
-brew tap caskroom/versions
+tap caskroom/versions
 
 cask install google-drive --appdir=/Applications --force
 cask install iterm2-beta --appdir=/Applications --force
